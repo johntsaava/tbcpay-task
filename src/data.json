@@ -1,0 +1,316 @@
+{
+  "cities": [
+    { "value": 1, "name": "თბილისი" },
+    { "value": 2, "name": "ბათუმი" },
+    { "value": 3, "name": "ქუთაისი" },
+    { "value": 4, "name": "რუსთავი" },
+    { "value": 5, "name": "გორი" },
+    { "value": 6, "name": "ზუგდიდი" },
+    { "value": 7, "name": "ფოთი" },
+    { "value": 8, "name": "ხაშური" },
+    { "value": 9, "name": "სამტრედია" },
+    { "value": 10, "name": "სენაკი" }
+  ],
+  "users": [
+    {
+      "id": "5cd70c12008a6e11d294b695",
+      "firstName": "Twila",
+      "lastName": "Schmidt",
+      "idNumber": "11887353124",
+      "gender": "female",
+      "birthDate": "1990-2-4",
+      "birthplace": 10,
+      "address": "Cumberland Walk, Westmoreland"
+    },
+    {
+      "id": "5cd70c12df086ccf422ca997",
+      "firstName": "Wyatt",
+      "lastName": "Bender",
+      "idNumber": "54192668191",
+      "gender": "male",
+      "birthDate": "1991-9-5",
+      "birthplace": 4,
+      "address": "Luquer Street, Ladera"
+    },
+    {
+      "id": "5cd70c1290f753c74934c42e",
+      "firstName": "Irene",
+      "lastName": "Espinoza",
+      "idNumber": "27585402415",
+      "gender": "female",
+      "birthDate": "1993-8-18",
+      "birthplace": 6,
+      "address": "Ridgewood Avenue, Edgar"
+    },
+    {
+      "id": "5cd70c12b166ec22151a4216",
+      "firstName": "Hill",
+      "lastName": "Flowers",
+      "idNumber": "34959156368",
+      "gender": "male",
+      "birthDate": "1991-11-10",
+      "birthplace": 7,
+      "address": "Trucklemans Lane, Downsville"
+    },
+    {
+      "id": "5cd70c120736aef788931bbc",
+      "firstName": "Workman",
+      "lastName": "Floyd",
+      "idNumber": "42953404128",
+      "gender": "male",
+      "birthDate": "1999-4-23",
+      "birthplace": 7,
+      "address": "Cranberry Street, Thornport"
+    },
+    {
+      "id": "5cd70c1211d5d33e3b325716",
+      "firstName": "Tina",
+      "lastName": "Best",
+      "idNumber": "30774711041",
+      "gender": "female",
+      "birthDate": "1993-7-16",
+      "birthplace": 4,
+      "address": "Johnson Avenue, Belfair"
+    },
+    {
+      "id": "5cd70c12be335341dc1806dd",
+      "firstName": "Valeria",
+      "lastName": "Campbell",
+      "idNumber": "44152069140",
+      "gender": "female",
+      "birthDate": "1990-10-10",
+      "birthplace": 2,
+      "address": "Georgia Avenue, Sanders"
+    },
+    {
+      "id": "5cd70c123a42d4a0e429faf7",
+      "firstName": "Jayne",
+      "lastName": "Blanchard",
+      "idNumber": "21767038507",
+      "gender": "female",
+      "birthDate": "1999-3-20",
+      "birthplace": 3,
+      "address": "Bainbridge Street, Norris"
+    },
+    {
+      "id": "5cd70c125c83d71872ce3ef8",
+      "firstName": "Marcie",
+      "lastName": "Mcguire",
+      "idNumber": "34744144373",
+      "gender": "female",
+      "birthDate": "1995-7-25",
+      "birthplace": 6,
+      "address": "Quentin Street, Harviell"
+    },
+    {
+      "id": "5cd70c1250aec40c3a8aeff0",
+      "firstName": "Luz",
+      "lastName": "Ramirez",
+      "idNumber": "35160270213",
+      "gender": "female",
+      "birthDate": "1995-10-18",
+      "birthplace": 2,
+      "address": "Covert Street, Winfred"
+    },
+    {
+      "id": "5cd70c12c0c49fa1365ca4c6",
+      "firstName": "Geraldine",
+      "lastName": "Gonzalez",
+      "idNumber": "59498156480",
+      "gender": "female",
+      "birthDate": "1996-4-4",
+      "birthplace": 10,
+      "address": "Pacific Street, Masthope"
+    },
+    {
+      "id": "5cd70c12897ccbabf9caa18e",
+      "firstName": "Ester",
+      "lastName": "Ashley",
+      "idNumber": "55790816983",
+      "gender": "female",
+      "birthDate": "1991-3-23",
+      "birthplace": 10,
+      "address": "McKinley Avenue, Harrison"
+    },
+    {
+      "id": "5cd70c12887a073c81a84805",
+      "firstName": "Candace",
+      "lastName": "Alvarez",
+      "idNumber": "46278110433",
+      "gender": "female",
+      "birthDate": "1991-10-19",
+      "birthplace": 7,
+      "address": "Goodwin Place, Woodruff"
+    },
+    {
+      "id": "5cd70c125c9e2c8c4661ccc6",
+      "firstName": "Kirk",
+      "lastName": "Wall",
+      "idNumber": "30076677583",
+      "gender": "male",
+      "birthDate": "1995-8-21",
+      "birthplace": 1,
+      "address": "Williams Avenue, Vicksburg"
+    },
+    {
+      "id": "5cd70c122428c2c5b8cfe47b",
+      "firstName": "Ann",
+      "lastName": "Buckley",
+      "idNumber": "26455560386",
+      "gender": "female",
+      "birthDate": "1995-8-5",
+      "birthplace": 1,
+      "address": "Lafayette Avenue, Genoa"
+    },
+    {
+      "id": "5cd70c12db433d02b7f59347",
+      "firstName": "Helga",
+      "lastName": "Strickland",
+      "idNumber": "26738998901",
+      "gender": "female",
+      "birthDate": "1990-3-5",
+      "birthplace": 8,
+      "address": "Fleet Place, Trail"
+    },
+    {
+      "id": "5cd70c127ac60c9fffd7c244",
+      "firstName": "Joanna",
+      "lastName": "Rodgers",
+      "idNumber": "25994317406",
+      "gender": "female",
+      "birthDate": "1991-3-18",
+      "birthplace": 3,
+      "address": "Kings Hwy, Darrtown"
+    },
+    {
+      "id": "5cd70c12e0d5fd43ee08a40c",
+      "firstName": "Santiago",
+      "lastName": "Potter",
+      "idNumber": "32899168797",
+      "gender": "male",
+      "birthDate": "1990-11-23",
+      "birthplace": 6,
+      "address": "Albemarle Road, Newcastle"
+    },
+    {
+      "id": "5cd70c127c87485db29f6988",
+      "firstName": "English",
+      "lastName": "Skinner",
+      "idNumber": "27383927435",
+      "gender": "male",
+      "birthDate": "1996-1-10",
+      "birthplace": 6,
+      "address": "Anchorage Place, Kohatk"
+    },
+    {
+      "id": "5cd70c1212676cf198c9d96f",
+      "firstName": "Pickett",
+      "lastName": "Lawrence",
+      "idNumber": "38468202779",
+      "gender": "male",
+      "birthDate": "1996-5-19",
+      "birthplace": 3,
+      "address": "Hall Street, Ada"
+    },
+    {
+      "id": "5cd70c12598f7df8ea004c2f",
+      "firstName": "Ana",
+      "lastName": "Roman",
+      "idNumber": "21850992377",
+      "gender": "female",
+      "birthDate": "1998-4-13",
+      "birthplace": 2,
+      "address": "Myrtle Avenue, Coventry"
+    },
+    {
+      "id": "5cd70c1294cfa8ff5308c58b",
+      "firstName": "Emma",
+      "lastName": "Beck",
+      "idNumber": "26251102912",
+      "gender": "female",
+      "birthDate": "1992-7-25",
+      "birthplace": 7,
+      "address": "Loring Avenue, Balm"
+    },
+    {
+      "id": "5cd70c128fefd2e661c07cd0",
+      "firstName": "Byrd",
+      "lastName": "Nash",
+      "idNumber": "15365693503",
+      "gender": "male",
+      "birthDate": "2000-9-25",
+      "birthplace": 2,
+      "address": "Boynton Place, Camino"
+    },
+    {
+      "id": "5cd70c12b7a985c5537ad6ac",
+      "firstName": "Moreno",
+      "lastName": "Compton",
+      "idNumber": "21244514034",
+      "gender": "male",
+      "birthDate": "2000-4-11",
+      "birthplace": 6,
+      "address": "Highland Avenue, Cresaptown"
+    },
+    {
+      "id": "5cd70c124b37d35098e90132",
+      "firstName": "Grimes",
+      "lastName": "Mccarthy",
+      "idNumber": "27316192278",
+      "gender": "male",
+      "birthDate": "1994-8-25",
+      "birthplace": 4,
+      "address": "Friel Place, Lutsen"
+    },
+    {
+      "id": "5cd70c12a9fa904b4fdf282d",
+      "firstName": "Buckner",
+      "lastName": "Hill",
+      "idNumber": "35198868532",
+      "gender": "male",
+      "birthDate": "1993-2-25",
+      "birthplace": 5,
+      "address": "Jamaica Avenue, Conway"
+    },
+    {
+      "id": "5cd70c12df4d3193a618c5da",
+      "firstName": "Guerrero",
+      "lastName": "Cantu",
+      "idNumber": "31294242450",
+      "gender": "male",
+      "birthDate": "1999-10-21",
+      "birthplace": 4,
+      "address": "Lacon Court, Canoochee"
+    },
+    {
+      "id": "5cd70c12042ef26df70a2189",
+      "firstName": "Ayala",
+      "lastName": "Lowe",
+      "idNumber": "33755648620",
+      "gender": "male",
+      "birthDate": "2000-2-25",
+      "birthplace": 6,
+      "address": "Falmouth Street, Roberts"
+    },
+    {
+      "id": "5cd70c1207797ac06bec6179",
+      "firstName": "Louella",
+      "lastName": "Smith",
+      "idNumber": "24679030193",
+      "gender": "female",
+      "birthDate": "1996-8-2",
+      "birthplace": 3,
+      "address": "Devoe Street, Stewartville"
+    },
+    {
+      "id": "5cd70c12eb6048e740fdaf22",
+      "firstName": "Knowles",
+      "lastName": "Hutchinson",
+      "idNumber": "37371974057",
+      "gender": "male",
+      "birthDate": "1996-9-18",
+      "birthplace": 9,
+      "address": "Porter Avenue, Sharon"
+    }
+  ]
+}
