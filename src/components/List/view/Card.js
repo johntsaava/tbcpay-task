@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import EditIcon from "@material-ui/icons/Edit";
 import MaterialPaper from "@material-ui/core/Paper";
 
+import data from "../../../data.json";
+
 const Paper = styled(MaterialPaper)`
   align-self: stretch;
   margin: 15px;
@@ -45,15 +47,20 @@ const Cards = ({
     </Row>
     <Row>
       <span>Gender:</span>
-      <span>{gender}</span>
+      <span>{gender === "male" ? "Male" : "Female"}</span>
     </Row>
     <Row>
       <span>Birth date:</span>
-      <span>{birthDate}</span>
+      <span>
+        {birthDate
+          .split("-")
+          .reverse()
+          .join("/")}
+      </span>
     </Row>
     <Row>
       <span>Birthplace:</span>
-      <span>{birthplace}</span>
+      <span>{data.cities.find(city => city.value === birthplace).name}</span>
     </Row>
     <Row>
       <span>Address:</span>
