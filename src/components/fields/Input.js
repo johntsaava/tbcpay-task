@@ -5,20 +5,17 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 
 const Input = ({ label, field, form, ...rest }) => {
-  let error = false;
-  if (form) {
-    error = form.errors[field.name];
-    return (
-      <FormControl>
-        <TextField label={label} {...field} error={!!error} {...rest} />
+  let error = form.errors[field.name];
+  return (
+    <FormControl>
+      <TextField label={label} {...field} error={!!error} {...rest} />
+      {error && (
         <FormHelperText>
-          {error && error.replace(field.name, `"${label}"`)}
+          {error.replace(field.name, `"${label}"`)}
         </FormHelperText>
-      </FormControl>
-    );
-  } else {
-    return <TextField label={label} {...field} {...rest} />;
-  }
+      )}
+    </FormControl>
+  );
 };
 
 export default Input;

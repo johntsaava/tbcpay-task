@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import Input from "./fields/Input";
 import DateInput from "./fields/DateInput";
 import Select from "./fields/Select";
+import TextField from "@material-ui/core/TextField";
 
 import data from "../data.json";
 
@@ -35,11 +35,11 @@ const UserSearch = ({ filters, onChange }) => {
   return (
     <Form>
       <Pair>
-        <Input label="First name" field={field("firstName")} />
-        <Input label="Last name" field={field("lastName")} />
+        <TextField label="First name" {...field("firstName")} />
+        <TextField label="Last name" {...field("lastName")} />
       </Pair>
 
-      <Input type="number" label="ID number" field={field("idNumber")} />
+      <TextField type="number" label="ID number" {...field("idNumber")} />
 
       <Select
         label="Gender"
@@ -56,7 +56,7 @@ const UserSearch = ({ filters, onChange }) => {
         field={field("birthplace")}
       />
 
-      <Input label="Address" field={field("address")} />
+      <TextField label="Address" {...field("address")} />
 
       <Pair>
         <DateInput

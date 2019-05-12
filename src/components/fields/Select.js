@@ -22,7 +22,11 @@ const Select = ({ label, field, form, options = [] }) => {
           </MenuItem>
         ))}
       </Mselect>
-      {error && <FormHelperText>{error}</FormHelperText>}
+      {error && (
+        <FormHelperText>
+          {error.replace(field.name, `"${label}"`)}
+        </FormHelperText>
+      )}
     </FormControl>
   );
 };

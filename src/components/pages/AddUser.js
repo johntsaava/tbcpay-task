@@ -33,7 +33,7 @@ const AddUser = ({ history }) => {
             payload: {
               ...values,
               idNumber: String(values.idNumber),
-              id: String(Math.random())
+              id: String(Math.random()).slice(2)
             }
           });
           history.push("/");

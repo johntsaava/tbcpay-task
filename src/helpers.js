@@ -13,7 +13,7 @@ export const filterUsers = (filters, users) => {
 
   for (let filter in textFilters) {
     visibleUsers = visibleUsers.filter(user =>
-      user[filter].toLowerCase().includes(filters[filter])
+      user[filter].toLowerCase().includes(textFilters[filter])
     );
   }
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Form as FormikForm, Field } from "formik";
 import { Link } from "react-router-dom";
 
-import Typography from "@material-ui/core/Typography";
+import MaterialTypography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Fab from "@material-ui/core/Fab";
 import BackIcon from "@material-ui/icons/KeyboardBackspace";
@@ -34,6 +34,12 @@ const BackLink = styled(Link)`
   left: 10px;
   top: 10px;
   z-index: 1;
+`;
+
+const Typography = styled(MaterialTypography)`
+  @media (max-width: 600px) {
+    text-align: right;
+  }
 `;
 
 const UserForm = ({ title, buttonText }) => {

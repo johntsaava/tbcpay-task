@@ -37,12 +37,23 @@ const User = ({ match, history }) => {
       }}
       validationSchema={userInputSchema}
       enableReinitialize={true}
-      onSubmit={values => {
-        dispatch({
-          type: "EDIT_USER",
-          payload: { ...values, id: user.id }
-        });
-        history.push("/");
+      onSubmit={(values, { setErrors }) => {
+        if (
+          user.idNumber !== String(values.idNumber) &&
+          state.users.find(user => user.idNumber === String(values.idNumber))
+        ) {
+          setErrors({ idNumber: "Already exists" });
+        } else {
+          dispatch({
+            type: "EDIT_USER",
+            payload: {
+              ...values,
+              idNumber: String(values.idNumber),
+              id: user.id
+            }
+          });
+          history.push("/");
+        }
       }}
     >
       {() => <UserForm title="Edit user" buttonText="Edit" />}

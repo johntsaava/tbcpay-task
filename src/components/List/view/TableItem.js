@@ -5,9 +5,9 @@ import EditIcon from "@material-ui/icons/Edit";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 
-import data from "../data.json";
+import data from "../../../data.json";
 
-const UserListItem = ({
+const ListItem = ({
   user: {
     id,
     firstName,
@@ -45,4 +45,4 @@ const UserListItem = ({
   );
 };
 
-export default UserListItem;
+export default ListItem;

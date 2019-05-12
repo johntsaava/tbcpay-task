@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import debounce from "lodash/debounce";
 
 import Fab from "@material-ui/core/Fab";
 import AddIcon from "@material-ui/icons/Add";
@@ -8,7 +9,7 @@ import AddIcon from "@material-ui/icons/Add";
 import context from "../../context";
 import { filterUsers } from "../../helpers";
 
-import UserList from "../UserList";
+import List from "../List";
 import UserSearch from "../UserSearch";
 
 const Container = styled.div`
@@ -30,13 +31,21 @@ const Home = () => {
     address: ""
   });
   const [visibleUsers, setVisibleUsers] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (state.users) setVisibleUsers(filterUsers(filters, state.users));
-  }, [state.users, filters]);
+  useEffect(
+    debounce(() => {
+      if (state.users) {
+        setVisibleUsers(filterUsers(filters, state.users));
+        setLoading(false);
+      }
+    }, 1000),
+    [state.users, filters]
+  );
 
   const onChange = (filter, value) => {
     setFilters(state => ({ ...state, [filter]: value }));
+    setLoading(true);
   };
 
   return (
@@ -49,7 +58,7 @@ const Home = () => {
         </Fab>
       </Link>
 
-      <UserList users={visibleUsers} />
+      <List users={visibleUsers} loading={loading} />
     </Container>
   );
 };
