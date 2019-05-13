@@ -7,7 +7,7 @@ import TableRow from "@material-ui/core/TableRow";
 
 import data from "../../../data.json";
 
-const ListItem = ({
+const TableItem = ({
   user: {
     id,
     firstName,
@@ -45,4 +45,4 @@ const ListItem = ({
   );
 };
 
-export default ListItem;
+export default TableItem;

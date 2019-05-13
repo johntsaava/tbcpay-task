@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Formik } from "formik";
 import { Link } from "react-router-dom";
 
-import { userInputSchema } from "../../helpers";
-import context from "../../context";
 import UserForm from "../UserForm";
+
+import context from "../../context";
 
 const User = ({ match, history }) => {
   const { state, dispatch } = useContext(context);
@@ -25,39 +24,15 @@ const User = ({ match, history }) => {
     );
 
   return (
-    <Formik
-      initialValues={{
-        firstName: user.firstName,
-        lastName: user.lastName,
-        idNumber: user.idNumber,
-        gender: user.gender,
-        birthDate: user.birthDate,
-        birthplace: user.birthplace,
-        address: user.address
+    <UserForm
+      title="Edit user"
+      buttonText="Edit"
+      initialValues={user}
+      onSubmit={values => {
+        dispatch({ type: "EDIT_USER", payload: values });
+        history.push("/");
       }}
-      validationSchema={userInputSchema}
-      enableReinitialize={true}
-      onSubmit={(values, { setErrors }) => {
-        if (
-          user.idNumber !== String(values.idNumber) &&
-          state.users.find(user => user.idNumber === String(values.idNumber))
-        ) {
-          setErrors({ idNumber: "Already exists" });
-        } else {
-          dispatch({
-            type: "EDIT_USER",
-            payload: {
-              ...values,
-              idNumber: String(values.idNumber),
-              id: user.id
-            }
-          });
-          history.push("/");
-        }
-      }}
-    >
-      {() => <UserForm title="Edit user" buttonText="Edit" />}
-    </Formik>
+    />
   );
 };
 

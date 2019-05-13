@@ -19,7 +19,7 @@ const Row = styled.div`
   font-family: "Roboto";
 `;
 
-const Cards = ({
+const Card = ({
   user: {
     id,
     firstName,
@@ -69,4 +69,4 @@ const Cards = ({
   </Paper>
 );
 
-export default Cards;
+export default Card;

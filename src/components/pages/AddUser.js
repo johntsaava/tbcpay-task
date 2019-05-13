@@ -1,16 +1,28 @@
 import React, { useContext } from "react";
-import { Formik } from "formik";
-
-import context from "../../context";
-import { userInputSchema } from "../../helpers";
 
 import UserForm from "../UserForm";
 
+import context from "../../context";
+
 const AddUser = ({ history }) => {
-  const { state, dispatch } = useContext(context);
+  const { dispatch } = useContext(context);
+
+  const onSubmit = values => {
+    dispatch({
+      type: "ADD_USER",
+      payload: {
+        ...values,
+        id: String(Math.random()).slice(2)
+      }
+    });
+    history.push("/");
+  };
 
   return (
-    <Formik
+    <UserForm
+      title="Add user"
+      buttonText="Add"
+      onSubmit={onSubmit}
       initialValues={{
         firstName: "",
         lastName: "",
@@ -20,28 +32,7 @@ const AddUser = ({ history }) => {
         birthplace: "",
         address: ""
       }}
-      enableReinitialize={true}
-      validationSchema={userInputSchema}
-      onSubmit={(values, { setErrors }) => {
-        if (
-          state.users.find(user => user.idNumber === String(values.idNumber))
-        ) {
-          setErrors({ idNumber: "Already exists" });
-        } else {
-          dispatch({
-            type: "ADD_USER",
-            payload: {
-              ...values,
-              idNumber: String(values.idNumber),
-              id: String(Math.random()).slice(2)
-            }
-          });
-          history.push("/");
-        }
-      }}
-    >
-      {() => <UserForm title="Add user" buttonText="Add" />}
-    </Formik>
+    />
   );
 };
 

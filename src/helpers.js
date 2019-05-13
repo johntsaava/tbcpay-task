@@ -1,8 +1,4 @@
-import * as yup from "yup";
-
 export const filterUsers = (filters, users) => {
-  let visibleUsers = [...users];
-
   // step 1
   const textFilters = {
     firstName: filters.firstName.toLowerCase(),
@@ -12,7 +8,8 @@ export const filterUsers = (filters, users) => {
   };
 
   for (let filter in textFilters) {
-    visibleUsers = visibleUsers.filter(user =>
+    if (!textFilters[filter]) continue;
+    users = users.filter(user =>
       user[filter].toLowerCase().includes(textFilters[filter])
     );
   }
@@ -25,9 +22,7 @@ export const filterUsers = (filters, users) => {
 
   for (let filter in selectFilters) {
     if (!selectFilters[filter]) continue;
-    visibleUsers = visibleUsers.filter(
-      user => user[filter] === selectFilters[filter]
-    );
+    users = users.filter(user => user[filter] === selectFilters[filter]);
   }
 
   // step 3
@@ -36,7 +31,7 @@ export const filterUsers = (filters, users) => {
     birthDateTo: new Date(filters.birthDateTo).getTime()
   };
 
-  visibleUsers = visibleUsers.filter(user => {
+  users = users.filter(user => {
     const userbirthDate = new Date(user["birthDate"]).getTime();
     return (
       userbirthDate >= dateFilters.birthDateFrom &&
@@ -44,18 +39,17 @@ export const filterUsers = (filters, users) => {
     );
   });
 
-  return visibleUsers;
+  return users;
 };
 
-export const userInputSchema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  idNumber: yup
-    .string()
-    .required()
-    .length(11),
-  gender: yup.string().required(),
-  birthDate: yup.string().required(),
-  birthplace: yup.string().required(),
-  address: yup.string().required()
-});
+export const validateUserInputs = values => {
+  const errors = {};
+
+  for (let name in values) {
+    if (!values[name]) errors[name] = "Required";
+    if (name === "idNumber" && values[name].length !== 11)
+      errors[name] = "must be exactly 11 characters";
+  }
+
+  return Object.keys(errors).length ? errors : null;
+};

@@ -6,13 +6,20 @@ import Mselect from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 
-const Select = ({ label, field, form, options = [] }) => {
-  let error = false;
-  if (form) error = form.errors[field.name];
+const Select = ({
+  label,
+  name,
+  values,
+  errors = {},
+  onChange,
+  options = []
+}) => {
+  const value = values[name];
+  const error = errors && errors[name];
   return (
-    <FormControl style={{ minWidth: 125 }} error={!!error}>
+    <FormControl style={{ minWidth: 125 }} error={Boolean(error)}>
       <InputLabel>{label}</InputLabel>
-      <Mselect {...field}>
+      <Mselect value={value} onChange={e => onChange(name, e.target.value)}>
         <MenuItem value={""}>
           <em>None</em>
         </MenuItem>
@@ -23,9 +30,7 @@ const Select = ({ label, field, form, options = [] }) => {
         ))}
       </Mselect>
       {error && (
-        <FormHelperText>
-          {error.replace(field.name, `"${label}"`)}
-        </FormHelperText>
+        <FormHelperText>{error.replace(name, `"${label}"`)}</FormHelperText>
       )}
     </FormControl>
   );

@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-import Table from "./view/Table";
-import Card from "./view/Card";
+import Table from "./ui/Table";
+import Card from "./ui/Card";
 
 const Progress = styled(CircularProgress)`
   margin-top: 10%;
 `;
 
-const UserList = ({ users, loading }) => {
+const UserList = ({ users }) => {
   const [windowWidth, setWindowWidth] = useState(null);
 
   useEffect(() => {
@@ -24,9 +24,10 @@ const UserList = ({ users, loading }) => {
     };
   });
 
-  if (!users || loading) return <Progress />;
+  if (!users) return <Progress />;
 
   if (windowWidth > 1000) return <Table users={users} />;
+
   return users.map(user => <Card key={user.id} user={user} />);
 };
 

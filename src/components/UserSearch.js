@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import DateInput from "./fields/DateInput";
 import Select from "./fields/Select";
-import TextField from "@material-ui/core/TextField";
+import Input from "./fields/Input";
 
 import data from "../data.json";
 
@@ -24,62 +24,89 @@ const Pair = styled.div`
   }
 `;
 
-const UserSearch = ({ filters, onChange }) => {
-  const field = name => ({
-    value: filters[name],
-    onChange(e) {
-      onChange(name, e.target.value);
-    }
-  });
-
-  return (
-    <Form>
-      <Pair>
-        <TextField label="First name" {...field("firstName")} />
-        <TextField label="Last name" {...field("lastName")} />
-      </Pair>
-
-      <TextField type="number" label="ID number" {...field("idNumber")} />
-
-      <Select
-        label="Gender"
-        options={[
-          { value: "male", name: "Male" },
-          { value: "female", name: "Female" }
-        ]}
-        field={field("gender")}
+const UserSearch = ({ filters, onChange }) => (
+  <Form>
+    <Pair>
+      <Input
+        name="firstName"
+        id="firstName"
+        inputProps={{
+          id: "firstName"
+        }}
+        label="First name"
+        values={filters}
+        onChange={onChange}
       />
-
-      <Select
-        label="Birthplace"
-        options={data.cities}
-        field={field("birthplace")}
+      <Input
+        name="lastName"
+        id="lastName"
+        inputProps={{
+          id: "lastName"
+        }}
+        label="Last name"
+        values={filters}
+        onChange={onChange}
       />
+    </Pair>
 
-      <TextField label="Address" {...field("address")} />
+    <Input
+      name="idNumber"
+      id="idNumber"
+      inputProps={{
+        maxLength: 11,
+        id: "idNumber"
+      }}
+      type="tel"
+      label="ID number"
+      values={filters}
+      onChange={onChange}
+    />
 
-      <Pair>
-        <DateInput
-          label="Birth date (From)"
-          field={{
-            value: filters["birthDateFrom"],
-            onChange(value) {
-              onChange("birthDateFrom", value);
-            }
-          }}
-        />
-        <DateInput
-          label="Birth date (To)"
-          field={{
-            value: filters["birthDateTo"],
-            onChange(value) {
-              onChange("birthDateTo", value);
-            }
-          }}
-        />
-      </Pair>
-    </Form>
-  );
-};
+    <Select
+      name="gender"
+      label="Gender"
+      options={[
+        { value: "male", name: "Male" },
+        { value: "female", name: "Female" }
+      ]}
+      values={filters}
+      onChange={onChange}
+    />
+
+    <Select
+      name="birthplace"
+      label="Birthplace"
+      options={data.cities}
+      values={filters}
+      onChange={onChange}
+    />
+
+    <Input
+      name="address"
+      id="address"
+      inputProps={{
+        id: "address"
+      }}
+      label="Address"
+      values={filters}
+      onChange={onChange}
+    />
+
+    <Pair>
+      <DateInput
+        name="birthDateFrom"
+        label="Birth date (From)"
+        values={filters}
+        onChange={onChange}
+      />
+      <DateInput
+        name="birthDateTo"
+        label="Birth date (To)"
+        values={filters}
+        onChange={onChange}
+      />
+    </Pair>
+  </Form>
+);
 
 export default UserSearch;
